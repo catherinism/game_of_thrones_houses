@@ -1,0 +1,3 @@
+class GameOfThronesHouses::HOUSE
+
+end
