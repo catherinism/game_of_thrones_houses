@@ -2,6 +2,7 @@ class GameOfThronesHouses::CLI
   #send and get data to/from user
 
   def call
+    GameOfThronesHouses::API.house_list
     puts "Greetings!"
     puts ""
     menu
@@ -15,7 +16,6 @@ class GameOfThronesHouses::CLI
 
     input = gets.strip.to_i
     if input == 1
-      GameOfThronesHouses::API.house_list
       puts "House Targaryen of King's Landing"
     elsif input == 2
       puts "House Tarly of Horn Hill"
