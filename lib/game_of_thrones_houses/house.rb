@@ -18,7 +18,7 @@ class GameOfThronesHouses::HOUSE
   end
 
   def self.all
-    @all
+    @@all
   end
 
   def self.find(house)
