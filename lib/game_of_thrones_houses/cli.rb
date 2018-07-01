@@ -8,21 +8,12 @@ class GameOfThronesHouses::CLI
     menu
   end
 
-  def menu
-    puts "Please choose a number for your house"
-    puts "1. House Targaryen of King's Landing"
-    puts "2. House Tarly of Horn Hill"
-    puts "3. House Tarth of Evenfall Hall"
 
+  def menu
+    puts "What house do you want to see?"
+    puts ""
     input = gets.strip.to_i
-    if input == 1
-      puts "House Targaryen of King's Landing"
-    elsif input == 2
-      puts "House Tarly of Horn Hill"
-    elsif input == 3
-      puts "House Tarth of Evenfall Hall"
-    else
-      puts "I don't know that choice"
+  
       menu
   end
 end

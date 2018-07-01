@@ -1,4 +1,5 @@
 class GameOfThronesHouses::HOUSE
+  attr_accessor :name, :region, :coatOfArms
 
 @@all = []
   def self.new_from_json(house)
@@ -13,13 +14,15 @@ class GameOfThronesHouses::HOUSE
     @name = name
     @region = region
     @coatOfArms = coatOfArms
-    binding.pry
     @@all << self
-  end#end of initialize
+  end
 
   def self.all
     @all
   end
 
+  def self.find(house)
+    self.all[house-1]
+  end
 
 end
