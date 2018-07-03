@@ -1,11 +1,9 @@
 class GameOfThronesHouses::CLI
-  #send and get data to/from user
 
   def call
     GameOfThronesHouses::API.house_list
     puts ""
     puts "M’athchomaroon!"
-    puts ""
     menu
   end
 
@@ -20,7 +18,6 @@ class GameOfThronesHouses::CLI
   end
 
   def menu
-    puts ""
     house_list
       input = nil
       until input == "exit"
@@ -61,6 +58,6 @@ end
 
   def goodbye
     puts ""
-    puts  "Winter is coming. Goodbye."
+    puts "Goodbye. Winter is coming."
   end
 end

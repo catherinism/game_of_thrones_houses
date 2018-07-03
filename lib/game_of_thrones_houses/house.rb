@@ -1,5 +1,5 @@
 class GameOfThronesHouses::HOUSE
-  attr_accessor :name, :region, :coatOfArms
+  attr_reader :name, :region, :coatOfArms
 
 @@all = []
   def self.new_from_json(house)
