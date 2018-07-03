@@ -6,51 +6,61 @@ class GameOfThronesHouses::CLI
     puts ""
     puts "M’athchomaroon!"
     puts ""
-    puts "Here are some Game of Thrones houses:"
-    house_list
     menu
-    goodbye
   end
 
   def house_list
+    puts ""
+    puts "Select the Game of Thrones house that you would like to see."
+    puts ""
     GameOfThronesHouses::HOUSE.all.each.with_index(1) do |house, i|
       puts "#{i}. #{house.name}"
     end
-      puts ""
-      puts "What house do you want to see?"
+    puts ""
   end
 
-#if input in invalid, say something, return to menu
-#if input is correct, show more info
-#exit option
   def menu
-    input = nil
     puts ""
-    input = gets.strip.to_i
-    house = GameOfThronesHouses::HOUSE.find(input)
-    house_details(house)
-    puts ""
-    puts "Would you like to see another house? Enter Y or N"
-    input == gets.strip.downcase
-    if input == "y"
-      menu
+    house_list
+      input = nil
+      until input == "exit"
+      input = gets.strip.downcase
+      if input.to_i > 0 && input.to_i < 11
+      house = GameOfThronesHouses::HOUSE.find(input.to_i)
+      house_details(house)
+      puts "Enter another number, type 'LIST' to see the list of houses again, or type 'EXIT' to leave."
+      puts ""
+    elsif input == "list"
+    house_list
+  elsif input == "exit"
+    goodbye
     else
-      goodbye
+      error
+    end
   end
 end
 
   def house_details(house)
     puts ""
-    puts "#{house.name}"
-    puts "#{house.region}"
-    puts "#{house.coatOfArms}"
+    puts "Name: #{house.name}"
+    puts "Region: #{house.region}"
+    puts "Coat of Arms: #{house.coatOfArms}"
+    puts ""
+  end
+
+  def sub_menu
+    puts "Enter 'LIST' to see the list of houses, or type 'EXIT' to leave."
+    puts ""
   end
 
   def error
-    puts "Hodor. Hodor. Hodor."
+    puts ""
+    puts "Hodor. Hodor. Hodor. That is an invalid input."
+    house_list
   end
 
   def goodbye
-    "Goodbye. And remember.... winter is coming."
+    puts ""
+    puts  "Winter is coming. Goodbye."
   end
 end
