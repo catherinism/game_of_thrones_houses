@@ -1,8 +1,6 @@
 # GameOfThronesHouses
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/game_of_thrones_houses`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Game of Thrones Houses gem, a CLI that shows users GOT Houses from the "API of Ice and Fire". In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/game_of_thrones_houses`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The user will be presented with 10 Game of Thrones Houses, and will be asked to choose a number. If the number given is between 1-10, details of that house will be shown. The user will be asked again to choose another number, type 'list' to see the house list, or type 'exit' to leave.
 
 ## Development
 
