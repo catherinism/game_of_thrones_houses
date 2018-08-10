@@ -45,11 +45,6 @@ end
     puts ""
   end
 
-  def sub_menu
-    puts "Enter 'LIST' to see the list of houses, or type 'EXIT' to leave."
-    puts ""
-  end
-
   def error
     puts ""
     puts "Hodor. Hodor. Hodor. That is an invalid input."
